@@ -1,0 +1,26 @@
+{% extends 'layout.html'%}
+
+{% block title %}404{% endblock %}
+
+{%block content%}
+<section>
+ <div class="container" style="padding-bottom: 9.8%; padding-top: 13%;">
+        <div class="title-wrapper mb-5">
+            <h4 class="mbr-section-title mbr-fonts-style mb-0 display-1">
+                Błąd 404</h4>
+        </div>
+        <div class="row align-items-center">
+           
+            <div class="col-12 col-lg">
+                <div class="text-wrapper">
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        Strona, której szukasz, nie została znaleziona.
+                        <a href="{{ url_for('index') }}" class="button">Wróć do strony głównej</a> lub skorzystaj z menu, aby znaleźć to, czego potrzebujesz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

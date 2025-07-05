@@ -1,0 +1,112 @@
+{% extends 'layout.html' %}
+
+{% block title %}Kontakt{% endblock %}
+
+{% block content %}
+
+<section data-bs-version="5.1" class="form5 cid-uNVQgh4p8X" id="form02-8">
+    
+    
+<div class="container">
+        <div class="mbr-section-head mb-5" style="padding-top: 30px;" >
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-1">Porozmawiajmy</h3>
+            
+        </div>
+    <div class="row justify-content-center mt-4" style="margin-top: 10%;">
+        <div class="col-md-5"></div>
+            <div class="col-md5 mx-auto mbr-form" data-form-type="formoid">
+                <form action="/contact" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="FZ9URmEVqR5GauHRUKw8blLtmDDx5Aw78c/RUD/VAQHqLMgB2hdNbbWmQdiTzROVwSao53SSx/2IeRX9ki5BdrgrVpqADDx/QapBq4heKYPOI2uTqeIb3Wu8axiHstHj">
+                    {% if success is not none %} 
+                    {% if success == True %}
+                        <div class="row">
+                                
+                            <div class="alert alert-success col-12">
+                                wkrótce się odezwiemy się z Tobą.
+                            </div>
+                                {% else %}
+                                <div class="alert alert-danger col-12">
+                                
+                                    {% for msg in error %}
+                                        <li style="color: red;">{{ msg }}</li>
+                                    {% endfor %}
+                                </div>
+                        </div>
+
+                                {%endif%}
+                            {% endif %}
+        <div class="row justify-content-center mt-4">
+      <div class="col-lg-5 col-md-6 mx-auto mbr-form" data-form-type="formoid">
+        <form action="/contact" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
+          <!-- ...tu Twoje pola formularza... -->
+            <div class="form-group mb-3">
+                <input type="text" name="name" placeholder="Imię" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+                <input type="email" name="email" placeholder="E-mail" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+                <input type="tel" name="phone" placeholder="Twój numer telefonu:" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+                <textarea name="textarea" placeholder="Napisz do nas..." class="form-control" rows="6">{% if product_name  and product_title : %} Jestem zainteresowany {{product_name}} {{product_title}}. Proszę o kontakt w tej sprawie. {%endif%}</textarea>
+            <div class="col-md-5"></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                <button type="submit" class="btn btn-warning display-7">Wyślij</button>
+            </div>
+            </div>
+                                
+                            </div>
+                            </div>
+                        
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            
+</section>
+
+<section data-bs-version="5.1" class="contacts3 map1 cid-tL7eRYxhmt" id="contacts3-1">
+
+    
+
+    
+    
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-1">
+                Kontakt</h3>
+            
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="card col-12 col-md-5">
+                <div class="card-wrapper">
+                    <div class="text-wrapper">
+                        <h6 class="card-title  display-7">  <strong> Skontaktuj się z nami: </strong> <h6>
+                        <p class="display-7 "><br>
+                            <span style="color: black; "><strong>Telefon: </strong></span>
+                            &nbsp;<span style="color: rgb(48, 136, 212);"> + 48 513 555 110</span><br>
+                            <span style="color: black; "><strong>Whatsapp </strong></span>
+                            &nbsp;<span style="color: rgb(48, 136, 212);"> + 48 513 555 110</span><br>
+                            <span style="color: black; "><strong>E-mail: </strong></span>
+                            &nbsp;<span style="color: rgb(48, 136, 212);"> biuro@solarnedachy.eu</span><br><br>
+                            <span style="color: black; "><strong>Adres: </strong></span><br>
+                            <span style="color: rgb(48, 136, 212);">Solarne Dachy&nbsp;<br>Grzybowska 2/31<br>01-131 Warszawa<br></span>
+                            <span style="color: black; "><strong>Godziny pracy: </strong></span><br>
+                            <span style="color: rgb(48, 136, 212);">8:00AM - 15:00PM</span><br><br><br><br>
+
+
+                            
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="map-wrapper col-12 col-md-7">
+                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.876373097136!2d21.000319376548774!3d52.23759697198853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc899570925f%3A0x18acf9c9c679ec68!2sGrzybowska%202%2Flok.31%2C%2000-131%20Warszawa!5e1!3m2!1spl!2spl!4v1749806150189!5m2!1spl!2spl" allowfullscreen=""></iframe></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

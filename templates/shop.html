@@ -1,0 +1,115 @@
+{% extends 'layout.html' %}
+
+
+
+{% block title %}Sklep{% endblock %}
+
+{% block content %}
+<style>
+  /* Styl dla każdych okienka produktu – stała wysokość i opcjonalnie szerokość */
+ .product-item {
+  position: relative;
+  min-height: 450px; /* Ustalona minimalna wysokość – dostosuj tę wartość tak, aby zawierała cały content */
+  /* Usunięto height oraz overflow: hidden, aby cały content był widoczny */
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* Utrzymuje elementy równomiernie rozłożone */
+  border-radius: 7%;
+  overflow: hidden;
+}
+  
+  /* Jeśli chcesz, aby obrazki miały określony rozmiar w kontenerze */
+  .product-item .item-wrapper {
+    height: 200px; /* Ustalona wysokość obrazka */
+    overflow: visible;
+  }
+  
+  .product-item .item-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Obrazek idealnie wypełnia kontener, zachowując proporcje */
+  }
+  
+  /* Opcjonalnie możesz ustalić ograniczenie dla tekstu, by się nie rozciągał */
+  .product-item h5, .product-item h6 {
+    overflow: visible;
+    text-overflow: ellipsis;
+   
+  }
+  .btn.item-btn {
+ padding-top: 5px;      
+ margin-bottom: -40px; 
+  font-size: 0.9rem;     
+  line-height: 1;
+  border-radius: 8px;
+}
+
+.btn-container {
+  bottom: 18px;  /* Ustaw tę wartość tak, aby przycisk był "lekko ucięty" */
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+</style>
+
+
+<section data-bs-version="5.1" class="gallery5 mbr-gallery cid-uO6ZJ7lMkh" id="gallery5-1q">
+    
+
+
+    <div class="container" style="padding-top: 4%; padding-bottom: 12%;">
+          <div class="mbr-section-head">
+    <h3 class="mbr-section-title mbr-fonts-style align-center m-0 display-1">Produkty</h3>
+    <p class="mbr-fonts-style align-center m-0" style="font-size: 1rem;">
+       * Podane ceny są orientacyjne i nie stanowią oferty handlowej w rozumieniu art. 66 § 1 Kodeksu cywilnego.
+    </p>
+  </div>
+       
+        <div class="row mbr-gallery mt-4">
+            {% for product in product_table %}
+            <div class="col-12 col-md-7 col-lg-3 item gallery-image">
+                <div class="product-item">
+                    <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#uO6ZToWiWu-modal" data-bs-target="#uO6ZToWiWu-modal">
+                        <img class="w-100" src="{{ url_for( 'static', filename='assets/images/' ~ product[6]) }}" alt="Mobirise Website Builder" data-slide-to="0" data-bs-slide-to="0" data-target="#lb-uO6ZToWiWu" data-bs-target="#lb-uO6ZToWiWu">
+                    </div>
+                    <h5 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">
+                        <strong>{{ product[1] }}</strong>
+                    </h5>
+                    <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb 2 mt-2 display-7" style="font-size: medium;" >{{product[3]}}</h6>
+                    <h5 class="mbr-item-title mbr-fonts-style align-center mb-2 mt-2 display-7">
+                        {{ product[2] }}</br>
+                        <span class="mbr-text">cena: </span>
+                        <span class="text-primary">{% if product[4] is not none and product[4] != 0 and product[4] != '' %}
+                                {{ "{:.2f}".format(product[4]) }}
+                            {% elif product[5] is not none and product[5] != 0 and product[5] != '' %}
+                                {{ "{:.2f}".format(product[5]) }}
+                            {% else %}
+                                Brak ceny
+                            {% endif %}
+                            zł
+                            <form method="GET" action="{{url_for('contact')}}">
+                        <input type="hidden" name="product_name" value="{{ product[1] }}">
+                        <input type="hidden" name="product_title" value="{{ product[2] }}">
+                        {% if loop.index >= 6 %}
+                        <div class="btn-container">
+                        <button name="" class="btn item-btn btn-primary display-7" data-toggle="modal" data-bs-toggle="modal" data-target="#uO6ZToWiWu-modal">Porozmawiajmy</button>
+                        </div>
+                        {% endif %}
+                    </form>
+                        </span>
+
+                    </h5>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    
+            
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <!-- Site made with Mobirise Website Builder v6.0.6, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.6, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="static/assets/images/logo20domek-229x175.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+
+  <title>{% block title %}Strona główna{% endblock %}</title>
+
+  <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap-reboot.min.css">
+
+  <link rel="stylesheet" href="static/assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="static/assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="static/assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Bebas+Neue:400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue:400&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Zen+Antique:400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zen+Antique:400&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Fjalla+One:400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One:400&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Manrope:200,300,400,500,600,700,800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope:200,300,400,500,600,700,800&display=swap"></noscript>
+  <link rel="preload" as="style" href="static/assets/mobirise/css/mbr-additional.css?v=Sehxlc"><link rel="stylesheet" href="static/assets/mobirise/css/mbr-additional.css?v=Sehxlc" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+  <style>
+    .active_page{
+        font-weight: bold;
+        
+    }
+    
+        .mbr-section-btn.item-footer {
+            display: flex;
+            justify-content: center;
+        }
+
+        .mbr-section-btn.item-footer .btn {
+            margin: 0;
+        }
+    html{
+        scroll-behavior: smooth;
+    }
+    .fa {
+    padding: 10px;
+    margin: 5px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+    .fa-facebook { background: #3B5998; color: white; }
+    .fa-twitter { background: #55ACEE; color: white; }
+    .fa-linkedin { background: #007BB5; color: white; }
+    .fa-youtube { background: #e11818; color: white; }
+  
+
+
+
+.menu1 .navbar,
+.menu1 .navbar-fixed-top {            
+  position: relative !important;
+  top: auto !important;
+  width: auto !important;
+}
+
+
+  </style>
+
+</head>
+<body>
+  
+  <section data-bs-version="5.1" class="menu menu1 cid-tJGsCG1vVL" once="menu" id="menu01-1">
+	
+    
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <div class="container">
+    <a class="navbar-brand" href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='assets/images/solarne_dachy_logo.png') }}" alt="logo" style="height: 5rem;">
+    </a>
+
+    <!-- Przycisk hamburgera -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0" data-app-modern-menu="true">
+        <li class="nav-item">
+          <a class="nav-link link text-success display-1 {% if active_page == 'about' %}active_page{% endif %}" href="{{ url_for('about') }}">o firmie</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link text-success display-1 {% if active_page == 'shop' %}active_page{% endif %}" href="{{ url_for('shop') }}">sklep</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link text-success display-1 {% if active_page == 'projects' %}active_page{% endif %}" href="{{ url_for('projects') }}">projekty</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link text-success display-1 {% if active_page == 'contact' %}active_page{% endif %}" href="{{ url_for('contact') }}">kontakt</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</section>
+
+{%block content%}
+
+{% endblock %}
+<!--
+<section data-bs-version="5.1" class="social1 cid-uNZc6wHOmv" id="share1-1g">
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-12">
+                <h6 class="mbr-section-title-sm mb-3 align-center mbr-fonts-style display-1">
+                    Znajdź nas:
+                </h6>
+                <div>
+                    <div class="mbr-social-likes align-center">
+                       <a href="https://www.facebook.com/profile.php?id=61577221691691" target="_blank">
+                        <span class="">
+                            <i class="fa fa-facebook"></i>
+                        </span>
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank">
+                        <span class="">
+                            <i class="fa fa-twitter"></i>
+                        </span>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank">
+                        <span class="">
+                            <i class="fa fa-linkedin"></i>
+                        </span>
+                        </a>
+                         <a href="https://www.instagram.com" target="_blank">
+                        <span class="">
+                            <i class="fa fa-youtube"></i>
+                        </span>
+                        </a>
+                      
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->!
+<section data-bs-version="5.1" class="footer7 cid-uNZ48XEt7b" once="footers" id="footer7-14">
+
+    
+
+    
+
+    <div class="container">
+  <div class="media-container-row mbr-white d-flex justify-content-between align-items-center">
+    <div class="text-left">
+      <p class="mb-0" style="color: white; font-size: 0.8rem;"><strong>NIP: 653254623</strong> <br> <strong>KRS: 580139852435</strong></p>
+    </div>
+    <div class="text-right justify-content-center">
+      <p class="mbr-text mb-0 mbr-fonts-style display-8" style="color: white;">
+        © Copyright 2025 Solarne Dachy
+      </p>
+    </div>
+  </div>
+</div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>

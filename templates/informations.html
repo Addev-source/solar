@@ -1,0 +1,208 @@
+{% extends 'layout.html' %}
+
+{% block title %} Informacje {%endblock %}
+    {% block content%}
+
+
+    <script>
+ document.addEventListener("scroll", function() {
+    let sections = document.querySelectorAll("div[id]");
+    let links = document.querySelectorAll("#sidebar-menu a");
+    let listItems = document.querySelectorAll("#sidebar-menu li");
+
+    sections.forEach(section => {
+        let rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            listItems.forEach(item => item.classList.remove("active"));
+            let activeLink = document.querySelector(`#sidebar-menu a[href="#${section.id}"]`);
+            if (activeLink) {
+                activeLink.parentElement.classList.add("active"); // Dodaje .active do całego <li>
+            }
+        }
+    });
+});
+    </script>
+
+    <style>
+
+  
+    #Dachowka,#Kosztorys, #Projekt, #Montaz, #Dofinansowanie, #panele_tradycyjne {
+    position: relative; /* Okienko zostało zakładane jako relatywne */
+    scroll-margin-top: 120px;
+    }
+   #sidebar-box {
+    position: sticky; /* Okienko przyklejone do ekranu */
+    right: 20px; /* Umiejscowienie po prawej stronie */
+    bottom: 50px; /* Odsunięcie od dołu */
+    width: 180px; /* Szerokość */
+    height: 330px; /* Dynamiczna wysokość */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    top: 30%;
+    justify-content: center;
+    text-align: left;
+}
+@media(max-width: 1320px) {
+    #sidebar-box {
+        display: none !important;
+    }
+
+}
+
+#sidebar-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto; /* Zastosowanie scrolla dla pobieżnych menu */
+}
+#sidebar-menu a {
+    display: block;
+    padding: 10px 1px;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.5s;
+    margin-left: 5px;
+    
+}
+
+#sidebar-menu li {
+    list-style-type: none;
+    padding: 0; /* Usunięcie domyślnych odstępów */
+    margin: 0;
+
+}
+#sidebar-menu li.active{
+    background-color: #ff4552; /* Zielone podświetlenie */
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+
+}
+
+</style>
+  
+
+ <section data-bs-version="5.1" class="content14 cid-uOmnP0p5Uq" id="content14-1s" style="margin-top: -160px;" >
+
+        <div id="sidebar-box" class="sidebar-box">
+            <ul id="sidebar-menu">
+                <li><a href="#Kosztorys" class="display-7">Kosztorys</a></li>
+                <li><a href="#Dachowka" class="display-7">Dachówka</a></li>
+                <li><a href="#Projekt" class="display-7">Projekt</a></li>
+                <li><a href="#Montaz" class="display-7">Montaż</a></li>
+                <li><a href="#Dofinansowanie" class="display-7">Dofinansowanie</a></li>
+                <li><a href="#panele_tradycyjne" class="display-7">Panele</a></li>
+            </ul>
+
+         </div>
+    
+    <div class="container">
+        
+        <div class="row justify-content-center" >
+           
+            <div class="col-md-12 col-lg-10" id="Kosztorys">
+                    <h3 class="mbr-section-title mbr-fonts-style mb-2 display-7">
+                        <strong>Kosztorys</strong>
+                    </h3>
+                <ul class="list mbr-fonts-style display-7">
+                    <li>Dokładny kosztorys przed zawarciem umowy jest niezbędny, by uniknąć wszelkich nieporozumień. Zawiera szczegółowe zestawienie 
+                        wszystkich planowanych wydatków związanych z realizacją Twojego projektu. 
+                        Umożliwia obu stronom jasne określenie zakresu prac, cen jednostkowych, 
+                        materiałów i robocizny, dzięki niemu będziesz mieć pełną świadomość, za co płacisz. 
+                        Sporządzenie kosztorysu przed podpisaniem umowy chroni interesy obu stron i pozwala podejmować świadome decyzje finansowe.
+                    <li><strong>Pobieramy opłatę za wykonanie kosztorysu w wysokości 999zł</strong>,
+                    ponieważ jego przygotowanie wymaga czasu, wiedzy i dokładnej analizy 
+                        projektu.
+                        Kosztorys to nie tylko wycena – to szczegółowe opracowanie obejmujące dobór
+                         materiałów, oszacowanie robocizny, logistykę oraz potencjalne ryzyka i zmienne.
+                          Aby zapewnić rzetelność i indywidualne podejście, poświęcamy realny nakład pracy specjalisty.<br>
+                        </li>
+                        <li>Opłata za kosztorys będzie odjęta od kosztu projektu i montażu.</li>
+                
+                </ul>
+            </div>
+         
+             <div class="col-md-12 col-lg-10" id="Dachowka">
+                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7">
+                        <strong>Dachówka solarna</strong>
+                    </h3>
+                <ul class="list mbr-fonts-style display-7">
+                    <li>Dachówka solarna (inaczej: dachówka fotowoltaiczna) to nowoczesne rozwiązanie łączące funkcję tradycyjnego 
+                        pokrycia dachowego z technologią pozyskiwania energii słonecznej. W przeciwieństwie do klasycznych paneli 
+                        fotowoltaicznych montowanych nad połacią dachową, dachówka solarna jest integralną częścią dachu – wyglądem przypomina 
+                        zwykłą dachówkę, ale zawiera wbudowane ogniwa fotowoltaiczne.
+                    <li><strong>Dachówka solarna to inwestycja 2 w 1.</strong> Decydując się na dachówkę solarną, unikasz kosztów związanych z budową tradycyjnego
+                        pokrycia dachu – łączysz funkcję konstrukcyjną i energetyczną w jednym rozwiązaniu.
+                        <li>Nasze dachówki solarne powstają w nowoczesnej fabryce <a style="color: rgb(0, 0, 0); text-decoration: underline;" href="https://hanplast.com/" target="_blank"><strong>Hanplast</strong></a> w Bydgoszczy i 
+                         są w 100% polskim produktem, opartym na szwajcarskiej technologii Meyer Burger 
+                         – gwarantującej najwyższą jakość i niezawodność.
+                        </li>
+                        <li>Na dachówkę producent udziela <strong>30-letniej gwarancji.</strong></li>
+
+            </div>
+             <div class="col-md-12 col-lg-10" id="Projekt">
+                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7">
+                        <strong>Projekt</strong>
+                    </h3>
+                <ul class="list mbr-fonts-style display-7">
+                    <li>Projekt wykorzystujący energię słoneczną to nie tylko inwestycja w nowoczesną technologię, 
+                        ale także świadomy wybór na rzecz środowiska i samowystarczalności energetycznej. To przemyślane 
+                        połączenie estetyki, funkcjonalności i innowacji, w którym każdy element – od koncepcji po samo użytkowanie – 
+                        służy efektywnemu pozyskiwaniu czystej energii ze słońca. Dzięki takim rozwiązaniom, jak dachówka solarna
+                         czy zintegrowane systemy fotowoltaiczne, projekt staje się odpowiedzią na potrzeby przyszłości, 
+                         jednocześnie zachowując wysokie walory architektoniczne.
+                    </li>
+
+                </ul>
+            </div>
+             <div class="col-md-12 col-lg-10" id="Montaz">
+                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7">
+                        <strong>Montaż</strong>
+                    </h3>
+                <ul class="list mbr-fonts-style display-7">
+                    <li>Precyzja, doświadczenie i bezpieczeństwo. Proces montażu realizowany jest przez wykwalifikowanych i certyfikowanych 
+                        specjalistów, posiadających doświadczenie
+                        w instalacjach dachówek solarnych oraz systemów fotowoltaicznych. Każdy etap prac – od przygotowania powierzchni 
+                        po podłączenie systemu – wykonywany jest z najwyższą starannością, zgodnie z obowiązującymi normami i zaleceniami 
+                         producenta.
+                        Dzięki temu masz pewność, że instalacja będzie nie tylko wydajna i trwała, ale również w pełni bezpieczna i estetycznie
+                         dopracowana.</li>
+                </ul>
+            </div>
+             <div class="col-md-12 col-lg-10" id="Dofinansowanie">
+               
+                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7">
+                        <strong>Dofinansowanie</strong>
+                    </h3>
+                <ul class="list mbr-fonts-style display-7">
+                    <li>Wspieramy Twój ekologiczny wybór. Oferujemy kompleksową pomoc w zakresie pozyskania dostępnych 
+                        dopłat i ulg, zarówno z programów krajowych, jak i unijnych. Nasi specjaliści pomagają w przygotowaniu 
+                        niezbędnej dokumentacji, doradzają w wyborze najkorzystniejszych form wsparcia i towarzyszą na każdym 
+                        etapie procesu aplikacyjnego. Dzięki temu możesz znacząco obniżyć koszty inwestycji w dachówki solarne.</li>
+                   
+                </ul>
+            </div>
+                   <div class="col-md-12 col-lg-10" id="panele_tradycyjne">
+               
+                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7">
+                        <strong>Tradycyjne panele fotowoltaiczne</strong>
+                    </h3>
+                <ul class="list mbr-fonts-style display-7">
+                    <li>Panele fotowoltaiczne – w naszej ofercie znajduje się również sprawdzone rozwiązanie dla dużych powierzchni
+                        - tradycyjne panele fotowoltaiczne. Stanowią one optymalne rozwiązanie 
+                    dla inwestycji o większej skali – takich jak zakłady przemysłowe, gospodarstwa rolne, magazyny czy farmy 
+                    fotowoltaiczne. Dzięki wysokiej sprawności i możliwości łatwego skalowania instalacji, panele te doskonale 
+                    sprawdzają się wszędzie tam, gdzie kluczowe są wydajność, niezawodność i opłacalność w dłuższej perspektywie. Zapraszamy wszystkich do współpracy.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  {% endblock %}
+  
